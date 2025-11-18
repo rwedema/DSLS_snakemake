@@ -1,3 +1,7 @@
+# Snakemake specific
+.snakemake
+demo-results/
+
 # General
 .DS_Store
 __MACOSX/
@@ -23,3 +27,5 @@ Icon[]
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
