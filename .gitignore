@@ -3,6 +3,7 @@
 demo-results/
 
 # General
+.idea
 .DS_Store
 __MACOSX/
 .AppleDouble
