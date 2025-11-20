@@ -1,0 +1,14 @@
+sample_sheet: complete/demo-sample-sheet.txt
+
+input_directory: demo-data/
+
+output_directory: demo-results/
+
+samples:
+  - sample1
+  - sample2
+
+
+# tool param
+word_count: -w
+line_count: -l
