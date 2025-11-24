@@ -28,7 +28,7 @@ Which is a directory containing another config file -> must be named config.yaml
 create folder: slurm-profile
 create config.yaml
 
-Show that there are resources allocated for all rules. And a seplsarate part for the count_lines rule
+Show that there are resources allocated for all rules. And a separate part for the count_lines rule
 Run the workflow using:
 snakemake --jobs 2 -s demo.smk --workflow-profile slurm-profile/
 
@@ -36,5 +36,8 @@ You can use the profile to add all commandline arguments, such as the slurm, con
 Run the workflow using:
 snakemake --workflow-profile slurm-profile/ --dryrun
 
-
+# get information on a certain job
 scontrol show job 5749
+
+# to create a html report use the report() function together with template .rst documents
+run the workflow first to aqcuire all output and then run the workflow using --report to create the report
