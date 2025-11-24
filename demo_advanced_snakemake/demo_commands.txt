@@ -1,0 +1,40 @@
+
+Add option to run multiple threads per rule
+--threads
+
+Install the slurm plugin to be able to run the workflow on the slurm cluster
+https://snakemake.github.io/snakemake-plugin-catalog/plugins/executor/slurm.html
+
+conda install bioconda::snakemake-executor-plugin-slurm
+
+run the workflow with -e slurm or --executor slurm
+
+Need to specify additional resources:
+ - Memory
+ - CPUS
+ - Partition
+ - Runtime
+
+
+slurm specific commands:
+sinfo
+squeue
+sacct
+scontrol
+
+Resources can be set for all rules or per rule. Best practise is to create a workflow profile.
+Which is a directory containing another config file -> must be named config.yaml
+
+create folder: slurm-profile
+create config.yaml
+
+Show that there are resources allocated for all rules. And a seplsarate part for the count_lines rule
+Run the workflow using:
+snakemake --jobs 2 -s demo.smk --workflow-profile slurm-profile/
+
+You can use the profile to add all commandline arguments, such as the slurm, configfile, jobs, etc...
+Run the workflow using:
+snakemake --workflow-profile slurm-profile/ --dryrun
+
+
+scontrol show job 5749

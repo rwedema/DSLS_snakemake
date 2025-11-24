@@ -1,0 +1,14 @@
+input_directory: demo-data/
+output_directory: demo-results/
+report: report/workflow.rst
+
+threads: 2
+
+samples:
+  - sample1
+  - sample2
+
+
+# tool param
+word_count: -w
+line_count: -l

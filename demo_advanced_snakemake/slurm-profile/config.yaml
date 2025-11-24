@@ -1,0 +1,26 @@
+executor: slurm
+scheduler: greedy
+jobs: 5
+cores: 1
+snakefile: demo.smk
+configfile: ../config/demo-config.yaml
+use-conda: True
+latency-wait: 20
+
+default-resources:
+  slurm_partition: assemblix
+  mem_mb: 1024
+  runtime: 60
+  cpus_per_task: 1
+
+set-resources:
+  count_lines:
+    slurm_partition: assemblix
+    mem_mb: 1024
+    runtime: 60
+    cpus_per_task: 1
+  count_words:
+      slurm_partition: workstations
+      mem_mb: 1024
+      runtime: 60
+      cpus_per_task: 1
