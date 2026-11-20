@@ -15,7 +15,6 @@ To activate the just created environment use: `conda activate snakemake_demo`
 You will see *(snakemake_demo)* in the terminal prompt indicating that the activation was successful. 
 
 For this demo a few extra libraries are needed that we are going to install manually   
-We will explore how to create a new environment using a config file in a later session.    
 `conda install conda-forge::matplotlib`  
 `conda install conda-forge::seaborn`  
 `conda install anaconda::graphviz`
@@ -32,3 +31,9 @@ To create a graph depicting the rules and their dependencies:
 
 To also include the samples and create the DAG (directed acyclic graph) use:   
 `snakemake --cores 1 -s demo.smk --dag | dot -Tpng > demo-dag.png`
+
+To run a workflow that has the conda directive in rules use:
+`snakemake --cores 1 -s demo.smk --use-conda`
+
+To delete generated output from a workflow use:
+`snakemake --cores 1 -s demo.smk --delete-all-output`
